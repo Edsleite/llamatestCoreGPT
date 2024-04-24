@@ -2,10 +2,8 @@ import streamlit as st
 from llama_index.llms.ollama import Ollama as ollama
 #import ollama
 
-#ollama = Ollama()
-
 def generate_response():
-    response=ollama.chat(model="llama3", stream=True, messages=st.session_state.messages)
+    response=ollama.chat(model="llama2", stream=True, messages=st.session_state.messages)
     for partial_resp in response:
         token = partial_resp["message"]["content"]
         st.session_state["full_message"] += token
