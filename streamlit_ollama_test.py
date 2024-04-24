@@ -1,8 +1,8 @@
 import streamlit as st
-from llama_index.llms.ollama import Ollama
-#import ollama
+#from llama_index.llms.ollama import Ollama
+import ollama
 
-ollama = Ollama()
+#ollama = Ollama()
 
 def generate_response():
     response=ollama.chat(model="llama3", request_timeout=300.0 , stream=True, message=st.session_state.messages)
