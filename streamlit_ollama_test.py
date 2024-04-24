@@ -5,7 +5,7 @@ import ollama
 #ollama = Ollama()
 
 def generate_response():
-    response=ollama.chat(model="llama3", request_timeout=300.0 , stream=True, message=st.session_state.messages)
+    response=ollama.chat(model="llama3", stream=True, message=st.session_state.messages)
     for partial_resp in response:
         token = partial_resp["message"]["content"]
         st.session_state["full_message"] += token
